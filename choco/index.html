@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEON GLOW — Fashion & Beauty</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="header">
+    <a href="#" class="logo">NEON<span>GLOW</span></a>
+
+    <nav class="navigation">
+        <a href="#home">Главная</a>
+        <a href="#catalog">Каталог</a>
+        <a href="#about">О нас</a>
+    </nav>
+
+    <button class="cart-button" onclick="toggleCart()">
+        ♡ Корзина <span id="cart-count">0</span>
+    </button>
+</header>
+
+<main>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="eyebrow">FASHION • BEAUTY • FUTURE</p>
+            <h1>YOUR STYLE.<br><span>YOUR FUTURE.</span></h1>
+            <p class="hero-description">
+                Создай собственную реальность.
+                Открой коллекцию моды и красоты нового поколения.
+            </p>
+            <a href="#catalog" class="main-button">СМОТРЕТЬ КОЛЛЕКЦИЮ ↗</a>
+        </div>
+
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1000" alt="Fashion model">
+            <div class="image-label">NEW ERA / 2026</div>
+        </div>
+
+        <div class="hero-decoration">NEON<br>GLOW</div>
+    </section>
+
+    <section class="categories">
+        <p class="section-label">DISCOVER YOURSELF</p>
+        <h2>ВЫБЕРИ СВОЙ <span>МИР</span></h2>
+
+        <div class="category-list">
+            <button class="category-card active" data-category="all">
+                ALL ITEMS
+            </button>
+            <button class="category-card" data-category="clothes">
+                FASHION
+            </button>
+            <button class="category-card" data-category="beauty">
+                BEAUTY
+            </button>
+            <button class="category-card" data-category="accessories">
+                ACCESSORIES
+            </button>
+        </div>
+    </section>
+
+    <section class="catalog" id="catalog">
+        <div class="catalog-heading">
+            <div>
+                <p class="section-label">YOUR NEXT FAVORITE</p>
+                <h2>NEW <span>COLLECTION</span></h2>
+            </div>
+            <p id="product-total">8 PRODUCTS</p>
+        </div>
+
+        <div class="filters">
+            <input type="text" id="search" placeholder="⌕ Поиск товаров...">
+
+            <select id="sort">
+                <option value="default">Сортировка</option>
+                <option value="cheap">Сначала дешевле</option>
+                <option value="expensive">Сначала дороже</option>
+                <option value="name">По названию</option>
+            </select>
+        </div>
+
+        <div class="product-grid" id="product-grid"></div>
+    </section>
+
+    <section class="about" id="about">
+        <p class="section-label">ABOUT NEON GLOW</p>
+        <h2>BE <span>UNREAL.</span></h2>
+        <p>
+            NEON GLOW — пространство для тех, кто не боится
+            экспериментировать со своим стилем.
+            Мода, красота и индивидуальность без границ.
+        </p>
+    </section>
+
+</main>
+
+<footer>
+    <a href="#" class="logo">NEON<span>GLOW</span></a>
+    <p>© 2026 NEON GLOW. ALL RIGHTS RESERVED.</p>
+    <p>FASHION IS YOUR POWER.</p>
+</footer>
+
+<!-- Корзина -->
+<div class="cart-overlay" id="cart-overlay" onclick="closeCart(event)">
+    <div class="cart-panel" onclick="event.stopPropagation()">
+        <div class="cart-heading">
+            <h2>YOUR <span>CART</span></h2>
+            <button class="close-cart" onclick="toggleCart()">✕</button>
+        </div>
+
+        <div id="cart-items"></div>
+
+        <div class="cart-bottom">
+            <div class="cart-total">
+                <span>ИТОГО:</span>
+                <strong id="cart-total">0 ₸</strong>
+            </div>
+            <button class="checkout-button" onclick="checkout()">
+                ОФОРМИТЬ ЗАКАЗ →
+            </button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
